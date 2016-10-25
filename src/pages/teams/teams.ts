@@ -14,14 +14,19 @@ import {TeamDetails} from "../page";
 })
 export class Teams {
 
+   teams=[
+     {id:1,name:"team1"},
+     {id:2,name:"team2"}
+     ];
+
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
     console.log('Hello Teams Page');
   }
 
-  itemTapped(){
-    this.navCtrl.push(TeamDetails);
+  itemTapped($event,team){
+    this.navCtrl.push(TeamDetails,team);
   }
 
 }
